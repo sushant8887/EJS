@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Management System</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
     <h1>Employee List</h1>
     <ul>
-      <% employees.forEach(employee => { %>
-      <li>
-        <%= employee.name %> - <%= employee.age %> - <%= employee.department %>
-        <a href="/edit/<%= employee.id %>">Edit</a>
-        <a href="/delete/<%= employee.id %>">Delete</a>
-      </li>
-      <% }); %>
+       
+<% employee.forEach(emp => { %>
+    <p><%= emp.name %> - <%= emp.salary %> <a href="/editEmp/<%= emp.id %>">Edit</a> | <a href="/delEmp/<%= emp.id %>" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a></p>
+<% }); %>
+
     </ul>
-    <a href="/add">Add New Employee</a>
-  </body>
+    <a href="/addEmp">Add New Employee</a>
+</body>
 </html>
